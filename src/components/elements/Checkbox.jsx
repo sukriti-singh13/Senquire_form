@@ -1,14 +1,18 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
 
-const Checkbox = ({ field_id, field_label, field_value }) => {
-  const dispatch = useDispatch();
+const Checkbox = ({ field_id, field_label, field_value,handleElements }) => {
+  const [val , setVal] = useState(field_value)
+  const handleInput=(e)=>{
+    const inputValue = e.target.checked
+    setVal(inputValue)
+    handleElements(inputValue)
+  }
   return (
     <div className="user-input-checkbox">
       <input
         type="checkbox"
-        checked={field_value}
-        // onChange={(e) => dispatch(handleChangeInInput({ field_id, e }))}
+        checked={val}
+       onChange={(e)=>handleInput(e)}
       />
       <label>{field_label}</label>
     </div>

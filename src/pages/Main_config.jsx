@@ -1,31 +1,25 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToMainConfig } from "../features/ConfigSlice";
 // import MainInput from "./MainInput";
 const Main_config = () => {
-  const [mainConfig, setMainConfig] = useState([]);
-  const [camera, setCamera] = useState({ cameraName: "" });
+  const [camera, setCamera] = useState("");
   const dispatch = useDispatch();
+  
+  const cameras = useSelector(state=> state.config.mainConfig)
 
   const addCamera = () => {
-    setMainConfig([...mainConfig, camera]);
-    setCamera({ cameraName: "" });
-    dispatch(addToMainConfig(mainConfig));
+    dispatch(addToMainConfig(camera));
+    setCamera("");
   };
-
-  console.log(mainConfig);
-  const handleCameraChange = (e) => {
-    setCamera({ ...camera, [e.target.name]: e.target.value });
-  };
-
   return (
     <div className="main_config">
       <h1> Add Camera</h1>
-      {mainConfig.map((item, index) => (
+      {cameras.map((item, index) => (
         <div className="display_data">
           <p> Camera {index + 1}</p>
           <div className="main-content">
-            <div className="name"> Name: {item.cameraName}</div>
+            <div className="name"> Name: {item}</div>
           </div>
         </div>
       ))}
@@ -34,10 +28,10 @@ const Main_config = () => {
         <label>Camera Name </label>
         <input
           className="input-text"
-          name="cameraName"
+          name="option_label"
           type="text"
-          value={camera.cameraName}
-          onChange={(e) => handleCameraChange(e)}
+          value={camera}
+          onChange={(e) => setCamera(e.target.value)}
         />
       </div>
 
