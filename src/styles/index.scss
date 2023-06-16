@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap");
+@import "./variable.scss";
+@import "./Main_config.scss";
+@import "./Sub_config.scss";
+@import "./Elements.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +15,16 @@ button {
   cursor: pointer;
 }
 
-input {
-  border: none;
+.input-text,
+select {
+  background: #ffffff;
+  border: 1.5966px solid rgba(66, 80, 102, 0.4);
+  box-shadow: 0px 3.19319px 6.38638px rgba(66, 80, 102, 0.1);
+  border-radius: 5px;
   padding: 0.5rem;
 }
 
-.main-container {
+.main_container {
   min-height: 100vh;
   height: 100%;
   padding: 50px;
@@ -25,4 +35,42 @@ input {
     #ff6161 54.17%,
     #8f00ff 100%
   );
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.main_config,
+.sub_config {
+  min-height: calc(100vh - 100px);
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0px 6.38638px 79.8298px rgba(0, 0, 0, 0.05);
+  border-radius: 23.9489px;
+  width: 100%;
+  max-width: 460px;
+  padding: 2rem;
+  h1 {
+    font-family: $primary-font;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: underline;
+    margin-bottom: 30px;
+  }
+}
+
+button {
+  background: #136af3;
+  border-radius: 7.98298px;
+  width: 100.95px;
+  height: 34.32px;
+  color: #ffffff;
+  font-size: 14px;
+  margin-top:20px;
+}
+
+select {
+  width: 50%;
+  height: 26px;
+  padding: 0;
 }

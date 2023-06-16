@@ -1,0 +1,27 @@
+.main_config {
+}
+.content {
+  display: flex;
+  gap: 5px;
+  margin-top: 30px;
+}
+.add_camera {
+  margin-top: 10px;
+}
+
+.display_data {
+    margin-bottom: 10px;
+  .main-content {
+    margin-top: 5px;
+    display: flex;
+    gap: 50px;
+    .name,
+    .class {
+      background: #ffffff;
+      border: 1.5966px solid rgba(66, 80, 102, 0.4);
+      box-shadow: 0px 3.19319px 6.38638px rgba(66, 80, 102, 0.1);
+      border-radius: 5px;
+      padding: 0.5rem;
+    }
+  }
+}

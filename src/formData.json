@@ -1,0 +1,47 @@
+{   "class_name":"",
+    "type_fields" :[
+    {
+        "field_id": "type",
+        "field_label": "Type",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter type",
+        "field_type": "text",
+        "field_value": ""
+    },
+    {
+        "field_id": "model_type",
+        "field_label": "Model Type",
+        "field_mandatory": "yes",
+        "field_placeholder": "Enter email",
+        "field_type": "text"
+
+    },
+    {
+        "field_id": "box",
+        "field_label": "Box Detection",
+        "field_type": "checkbox",
+        "field_value": false
+    },
+    {
+        "field_id": "tracking",
+        "field_label": "Tracking",
+        "field_type": "checkbox",
+        "field_value": false
+    },
+   
+    {
+        "field_id": "class",
+        "field_label": "Class",
+        "field_mandatory": "yes",
+        "field_placeholder": "Add value seperated by commas",
+        "field_type": "text"
+    }
+    , {
+        "field_id": "cams",
+        "field_label": "Cameras",
+        "field_value": "enabled",
+        "field_mandatory": "yes",
+        "field_type": "select"
+        
+    }
+]}
