@@ -5,7 +5,7 @@ import { addNewSubConfig } from "../features/ConfigSlice";
 
 const Sub_config = () => {
   const { subConfigInterface } = useSelector((state) => state.config);
-  const stateSubConfig = useSelector((state) => state.config.subConfig);
+  
   const [Rerender, setRerender] = useState(Date.now());
   const dispatch = useDispatch();
   const [subConfig, setSubConfig] = useState();

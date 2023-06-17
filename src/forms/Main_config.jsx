@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToMainConfig } from "../features/ConfigSlice";
-// import MainInput from "./MainInput";
+
 const Main_config = () => {
   const [camera, setCamera] = useState("");
   const dispatch = useDispatch();
