@@ -25,9 +25,9 @@ const Sub_config = () => {
   const handleElements = (val, field, field_type) => {
     let updatedValue = val;
     if (field_type === "select") {
-      updatedValue = {}; // Initialize as empty object
+      updatedValue = {};
       val.forEach((item) => {
-        updatedValue[item] = {}; // Convert array value to object key with empty object value
+        updatedValue[item] = {};
       });
     }
 
