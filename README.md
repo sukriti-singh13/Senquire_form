@@ -10,4 +10,6 @@
 
 5. The form component is designed to be modular and it will be able to handle changes in the configurations without requiring significant changes to the UI.
 
+6. Mobile Responsive
+
 Deployed Link : https://senquire-form.vercel.app/
