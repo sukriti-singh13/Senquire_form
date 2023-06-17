@@ -58,6 +58,9 @@ select {
     margin-bottom: 30px;
   }
 }
+.main_config{
+  min-height: 1000%;
+}
 
 button {
   background: #136af3;
@@ -66,11 +69,16 @@ button {
   height: 34.32px;
   color: #ffffff;
   font-size: 14px;
-  margin-top:20px;
+  margin-top: 20px;
 }
 
 select {
   width: 50%;
   height: 26px;
   padding: 0;
+}
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
 }

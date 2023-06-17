@@ -9,6 +9,7 @@ const Sub_config = () => {
   const [Rerender, setRerender] = useState(Date.now());
   const dispatch = useDispatch();
   const [subConfig, setSubConfig] = useState();
+  const [error, setError] = useState("");
   const resetState = () => {
     const initialSubConfig = {};
     subConfigInterface.map(
@@ -25,19 +26,27 @@ const Sub_config = () => {
     setSubConfig({ ...subConfig, [field]: val });
   };
   const handleNewSubConfig = () => {
-    console.log(Object.keys(setSubConfig));
-    const payload = {};
-    const name = subConfig.type;
-    const newconfig = { ...subConfig };
-    delete newconfig.type;
-    payload[name] = newconfig;
-    dispatch(addNewSubConfig(payload));
-    setRerender(Date.now());
-    resetState();
+    if (subConfig.type) {
+      const payload = {};
+      const name = subConfig.type;
+      const newconfig = { ...subConfig };
+      delete newconfig.type;
+      payload[name] = newconfig;
+      dispatch(addNewSubConfig(payload));
+      setRerender(Date.now());
+      resetState();
+    } else {
+      setError("Provide necessaary fields");
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+    }
   };
 
   return (
     <div className="sub_config">
+      <h1>Add Type</h1>
+
       <div key={Rerender}>
         {subConfigInterface &&
           subConfigInterface.map((field, id) => (
@@ -47,7 +56,9 @@ const Sub_config = () => {
               handleElements={(val) => handleElements(val, field.field_id)}
             />
           ))}
+
         <button onClick={handleNewSubConfig}> Add Type</button>
+        <p className="error">{error && error}</p>
       </div>
     </div>
   );

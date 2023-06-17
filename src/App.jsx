@@ -1,6 +1,6 @@
 
-import Main_config from "./pages/Main_config";
-import Sub_config from "./pages/Sub_config";
+import Main_config from "./forms//Main_config";
+import Sub_config from "./forms/Sub_config";
 
 function App() {
   return (

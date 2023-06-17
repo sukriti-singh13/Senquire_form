@@ -21,6 +21,7 @@ const configSlice = createSlice({
     addNewSubConfig(state, { payload }) {
       state.subConfig = { ...state.subConfig, ...payload };
       state.mainConfig = [];
+      console.log(state.subConfig)
     },
   },
 });

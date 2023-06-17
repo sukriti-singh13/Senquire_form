@@ -11,9 +11,9 @@
     {
         "field_id": "model_type",
         "field_label": "Model Type",
-        "field_mandatory": "yes",
         "field_placeholder": "Enter email",
-        "field_type": "text"
+        "field_type": "text",
+        "field_value": ""
 
     },
     {
@@ -32,15 +32,13 @@
     {
         "field_id": "class",
         "field_label": "Class",
-        "field_mandatory": "yes",
         "field_placeholder": "Add value seperated by commas",
         "field_type": "text"
     }
     , {
         "field_id": "cams",
         "field_label": "Cameras",
-        "field_value": "enabled",
-        "field_mandatory": "yes",
+        "field_value": "",
         "field_type": "select"
         
     }

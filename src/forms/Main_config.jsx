@@ -5,18 +5,20 @@ import { addToMainConfig } from "../features/ConfigSlice";
 const Main_config = () => {
   const [camera, setCamera] = useState("");
   const dispatch = useDispatch();
-  
-  const cameras = useSelector(state=> state.config.mainConfig)
+
+  const cameras = useSelector((state) => state.config.mainConfig);
 
   const addCamera = () => {
-    dispatch(addToMainConfig(camera));
-    setCamera("");
+    if (camera) {
+      dispatch(addToMainConfig(camera));
+      setCamera("");
+    }
   };
   return (
     <div className="main_config">
       <h1> Add Camera</h1>
       {cameras.map((item, index) => (
-        <div className="display_data">
+        <div className="display_data" key={item}>
           <p> Camera {index + 1}</p>
           <div className="main-content">
             <div className="name"> Name: {item}</div>
