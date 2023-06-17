@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Select = ({ field_label, field_options }) => {
+const Select = ({ field_label, field_options, handleElements }) => {
+  const [val, setVal] = useState("");
+  const handleInput = (e) => {
+    const inputValue = e.target.value;
+    setVal(inputValue);
+    handleElements(inputValue);
+  };
   return (
     <div className="user_input">
       <label>{field_label}</label>
-      <select>
+      <select value={val} onChange={(e) => handleInput(e)}>
         <option>Add camera to select</option>
         {field_options &&
           field_options.length > 0 &&
