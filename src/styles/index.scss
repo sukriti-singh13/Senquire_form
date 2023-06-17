@@ -82,3 +82,21 @@ select {
   font-size: 16px;
   margin-top: 10px;
 }
+
+@media screen and (max-width:600px) {
+  .main_container {
+    min-height: 100vh;
+    height: 100%;
+    padding: 50px;
+    background: radial-gradient(
+      143.84% 319.25% at 110.38% -37.78%,
+      #ffef61 9.9%,
+      #ff6161 45.83%,
+      #ff6161 54.17%,
+      #8f00ff 100%
+    );
+    display: flex;
+    flex-direction: column;
+  
+  }
+}
