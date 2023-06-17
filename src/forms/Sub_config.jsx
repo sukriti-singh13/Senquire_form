@@ -30,6 +30,9 @@ const Sub_config = () => {
         updatedValue[item] = {};
       });
     }
+    if (field === "class") {
+      updatedValue = val.split(",");
+    }
 
     setSubConfig({
       ...subConfig,
