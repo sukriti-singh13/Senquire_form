@@ -11,10 +11,9 @@ const Element = ({
     field_label,
     field_placeholder,
     field_value,
-    field_options,  
-    
+    field_options,
   },
-  handleElements
+  handleElements,
 }) => {
   switch (field_type) {
     case "text":
@@ -23,7 +22,8 @@ const Element = ({
           field_id={field_id}
           field_label={field_label}
           field_placeholder={field_placeholder}
-          handleElements={(val)=>handleElements(val)}
+          field_value={field_value}
+          handleElements={(val) => handleElements(val)}
         />
       );
     case "select":
@@ -32,9 +32,9 @@ const Element = ({
           field_id={field_id}
           field_label={field_label}
           field_placeholder={field_placeholder}
-          handleElements={(val)=>handleElements(val)}
+          field_value={field_value}
           field_options={field_options}
-          
+          handleElements={(val) => handleElements(val)}
         />
       );
     case "checkbox":
@@ -42,8 +42,8 @@ const Element = ({
         <Checkbox
           field_id={field_id}
           field_label={field_label}
-          handleElements={(val)=>handleElements(val)}
-     
+          field_value={field_value}
+          handleElements={(val) => handleElements(val)}
         />
       );
 
