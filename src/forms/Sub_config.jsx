@@ -5,7 +5,7 @@ import { addNewSubConfig } from "../features/ConfigSlice";
 
 const Sub_config = () => {
   const { subConfigInterface } = useSelector((state) => state.config);
-  
+
   const [Rerender, setRerender] = useState(Date.now());
   const dispatch = useDispatch();
   const [subConfig, setSubConfig] = useState();
@@ -22,8 +22,19 @@ const Sub_config = () => {
     resetState();
   }, []);
 
-  const handleElements = (val, field) => {
-    setSubConfig({ ...subConfig, [field]: val });
+  const handleElements = (val, field, field_type) => {
+    let updatedValue = val;
+    if (field_type === "select") {
+      updatedValue = {}; // Initialize as empty object
+      val.forEach((item) => {
+        updatedValue[item] = {}; // Convert array value to object key with empty object value
+      });
+    }
+
+    setSubConfig({
+      ...subConfig,
+      [field]: updatedValue,
+    });
   };
   const handleNewSubConfig = () => {
     if (subConfig.type) {
@@ -53,7 +64,9 @@ const Sub_config = () => {
             <Element
               key={id}
               field={field}
-              handleElements={(val) => handleElements(val, field.field_id)}
+              handleElements={(val) =>
+                handleElements(val, field.field_id, field.field_type)
+              }
             />
           ))}
 
