@@ -58,7 +58,7 @@ select {
     margin-bottom: 30px;
   }
 }
-.main_config{
+.main_config {
   min-height: 1000%;
 }
 
@@ -76,27 +76,35 @@ select {
   width: 50%;
   height: 26px;
   padding: 0;
-  height:100%;
-  padding:.5rem;
+  height: 100%;
+  padding: 0.5rem;
 }
 .error {
   color: red;
   font-size: 16px;
   margin-top: 10px;
 }
-.instruction{
+.instruction {
   margin-top: 10px;
   font-size: 12px;
 }
-select{
-  height:100px;
-  width:200px;
+select {
+  height: 100px;
+  width: 200px;
 }
-select option{
-  padding:4px;
+select option {
+  padding: 4px;
   font-size: 14px;
 }
-@media screen and (max-width:600px) {
+.user_input select::-webkit-scrollbar {
+  width: 4px;
+}
+
+.user_input select::-webkit-scrollbar-thumb {
+  background-color: #888888;
+  border-radius: 4px;
+}
+@media screen and (max-width: 600px) {
   .main_container {
     min-height: 100vh;
     height: 100%;
@@ -110,6 +118,5 @@ select option{
     );
     display: flex;
     flex-direction: column;
-   
   }
 }
